@@ -246,6 +246,15 @@ fun draw_logo () {
 }
 
 
+#-----------------------------------------Background redraw--------------------------
+
+# Force a logo redraw to fix the disapearing
+fun draw_textlogo () {
+    textlogo.sprite.SetImage (textlogo.image);
+    textlogo.sprite.SetZ (textlogo.z);
+}
+
+
 #-----------------------------------------Progress Indicator--------------------------
 fun set_progress_indicator () {
     
@@ -1034,6 +1043,7 @@ Plymouth.SetUpdateStatusFunction (update_status_callback);
 fun refresh_callback ()
 {
     draw_logo ();
+    draw_textlogo ();
 }
 Plymouth.SetRefreshFunction (refresh_callback);
 
